@@ -1,0 +1,88 @@
+1
+var hello;
+console.log(hello); // undefined
+hello = 'world';
+
+2
+var needle = 'haystack';
+function test(){
+    var needle = 'magnet';
+    console.log(needle);
+}
+test(); // magnet
+
+3
+var brendan = 'super cool';
+function print(){
+    brendan = 'only okay';
+    console.log(brendan);
+}
+console.log(brendan); // super cool
+// if you call print() before or after function definition, it will print only okay twice. projecting that on 6 doesn't yield the same!
+
+4
+var food = 'chicken';
+console.log(food); // chicken
+function eat(){
+    var food;
+    food = 'half-chicken';
+    console.log(food);
+    var food = 'gone';
+}
+eat(); // half-chicken
+
+5
+var mean;
+mean(); // mean is not a function
+// the program won't run
+console.log(food);
+mean = function() {
+    food = "chicken";
+    console.log(food);
+    var food = "fish";
+    console.log(food);
+}
+console.log(food);
+
+6
+var genre;
+console.log(genre); // undefined
+genre = "disco";
+function rewind() {
+    var genre;
+    genre = "rock";
+    console.log(genre);
+    genre = "r&b";
+    console.log(genre);
+}
+rewind(); // rock --> r&b
+console.log(genre); // disco (why not r&b? bcz inside rewind the keyword var was present)
+
+7
+dojo = "san jose";
+console.log(dojo); // san jose
+function learn() {
+    var dojo;
+    dojo = "seattle";
+    console.log(dojo);
+    dojo = "burbank";
+    console.log(dojo);
+}
+learn(); // seattle --> burbank
+console.log(dojo); // san jose
+
+8
+function makeDojo(name, students){
+    const dojo = {};
+    dojo.name = name;
+    dojo.students = students;
+    if(dojo.students > 50){
+        dojo.hiring = true;
+    }
+    else if(dojo.students <= 0){
+        dojo = "closed for now";
+    }
+    return dojo;
+}
+console.log(makeDojo("Chicago", 65)); // { name: 'Chicago', students: 65, hiring: true }
+console.log(makeDojo("Berkeley", 0)); // error assigning to constant

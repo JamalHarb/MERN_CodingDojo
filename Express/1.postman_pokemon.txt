@@ -1,0 +1,5 @@
+https://pokeapi.co/api/v2/pokemon/bulbasaur
+https://pokeapi.co/api/v2/pokemon/pikachu
+https://pokeapi.co/api/v2/pokemon/10
+https://pokeapi.co/api/v2/ability/battle-armor
+https://pokeapi.co/api/v2/generation/6/
