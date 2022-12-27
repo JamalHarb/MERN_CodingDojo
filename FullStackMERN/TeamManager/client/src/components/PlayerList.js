@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { confirmAlert } from 'react-confirm-alert';
+// import { confirmAlert } from 'react-confirm-alert';
 
 const PlayerList = () => {
     const [players, setPlayers] = useState([]);
@@ -19,20 +19,24 @@ const PlayerList = () => {
     }
 
     const displayPopUp = (name, id) => {
-        confirmAlert({
-            title: 'Confirm to submit',
-            message: 'Are you sure you want to delete ' + name + "?",
-            buttons: [
-                {
-                    label: 'Yes',
-                    onClick: () => deleteOnePlayer(id)
-                },
-                {
-                    label: 'No',
-                    //onClick: () => alert('Click No')
-                }
-            ]
-        });
+        // confirmAlert({
+        //     title: 'Confirm to submit',
+        //     message: 'Are you sure you want to delete ' + name + "?",
+        //     buttons: [
+        //         {
+        //             label: 'Yes',
+        //             onClick: () => deleteOnePlayer(id)
+        //         },
+        //         {
+        //             label: 'No',
+        //             //onClick: () => alert('Click No')
+        //         }
+        //     ]
+        // });
+        const confirm = window.confirm("Are you sure you want to delete " + name + "?");
+        if(confirm){
+            deleteOnePlayer(id);
+        }
     }
 
     return (
